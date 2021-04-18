@@ -8,6 +8,8 @@
 #include "ncurses_display.h"
 #include "system.h"
 
+#include <chrono>
+
 using std::string;
 using std::to_string;
 
@@ -104,7 +106,7 @@ void NCursesDisplay::Display(System& system, int n) {
     wrefresh(system_window);
     wrefresh(process_window);
     refresh();
-    std::this_thread::sleep_for(std::chrono::seconds(1));
+    std::this_thread::sleep_for(std::chrono::seconds(2));
   }
   endwin();
 }
